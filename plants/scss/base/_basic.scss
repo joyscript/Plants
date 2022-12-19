@@ -1,0 +1,69 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+body {
+  min-width: 320px;
+}
+
+main,
+section,
+header,
+footer,
+nav {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+span {
+  display: inline-block;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: color 0.3s;
+
+  @include hov {
+    color: $color-accent;
+  }
+}
+
+// ---------------------------
+
+[class*='__wrapper'] {
+  max-width: $wrapper-width;
+  margin: 0 auto;
+}
