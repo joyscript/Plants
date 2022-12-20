@@ -32,19 +32,6 @@
   line-height: 35px;
 }
 
-.welcome__button {
-  padding: 10px 26px;
-  @include font(16px, 20px, $color-dark);
-  text-transform: uppercase;
-  border: 2px solid $color-accent;
-  border-radius: 10px;
-
-  @include hov {
-    color: $color-light;
-    background: $color-accent;
-  }
-}
-
 // -------------------------------------------------
 
 .about__wrapper {
@@ -65,6 +52,67 @@
 
 .about__span {
   color: $color-accent;
+}
+
+// -------------------------------------------------
+
+.service {
+  background: $color-bg;
+}
+
+.service__wrapper {
+  padding: 40px 109px 121px;
+}
+
+.service__content {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.service__title {
+  max-width: 306px;
+  margin-right: 142px;
+}
+
+.service__buttons {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  padding-top: 4px; //PP
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 55px;
+}
+
+.service-item {
+  width: 330px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.service-item__pic {
+  @include img();
+  padding-top: 350px;
+}
+
+.service-item__content {
+  padding: 9px 20px 35px;
+  text-align: center;
+  border: 1px solid $color-border;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.service-item__title {
+  margin-bottom: 14px;
+}
+
+.service-item__desc {
+  @include font(16px, 20px, $color-gray);
 }
 
 // -------------------------------------------------

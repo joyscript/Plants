@@ -175,7 +175,6 @@ body {
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
-  font-style: normal;
   color: #636060;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -188,7 +187,6 @@ h1 {
   font-size: 45px;
   line-height: 50px;
   font-weight: 700;
-  font-style: normal;
   color: #717171;
 }
 
@@ -197,7 +195,6 @@ h2 {
   font-size: 40px;
   line-height: 52px;
   font-weight: 400;
-  font-style: normal;
   color: #499a18;
 }
 
@@ -205,7 +202,6 @@ h3 {
   font-size: 20px;
   line-height: 20px;
   font-weight: 700;
-  font-style: normal;
   color: #e06733;
 }
 
@@ -275,6 +271,35 @@ a:hover, a:focus, a:focus-visible, a:active {
   margin: 0 auto;
 }
 
+.button {
+  width: 161px;
+  min-height: 50px;
+  padding: 10px;
+  font-family: Inika, serif;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #e06733;
+  border: 1px solid #e06733;
+  border-radius: 5px;
+}
+.button_welcome {
+  width: 158px;
+  min-height: 44px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+  border-width: 2px;
+  border-radius: 10px;
+}
+.button:hover, .button:focus, .button:focus-visible, .button:active {
+  color: #ffffff;
+  background: #e06733;
+}
+
 .header {
   background: #edf2ec;
 }
@@ -341,22 +366,6 @@ a:hover, a:focus, a:focus-visible, a:active {
   line-height: 35px;
 }
 
-.welcome__button {
-  padding: 10px 26px;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  font-style: normal;
-  color: #000000;
-  text-transform: uppercase;
-  border: 2px solid #e06733;
-  border-radius: 10px;
-}
-.welcome__button:hover, .welcome__button:focus, .welcome__button:focus-visible, .welcome__button:active {
-  color: #ffffff;
-  background: #e06733;
-}
-
 .about__wrapper {
   display: flex;
   justify-content: space-between;
@@ -375,4 +384,77 @@ a:hover, a:focus, a:focus-visible, a:active {
 
 .about__span {
   color: #e06733;
+}
+
+.service {
+  background: #edf2ec;
+}
+
+.service__wrapper {
+  padding: 40px 109px 121px;
+}
+
+.service__content {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.service__title {
+  max-width: 306px;
+  margin-right: 142px;
+}
+
+.service__buttons {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  padding-top: 4px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 55px;
+}
+
+.service-item {
+  width: 330px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.service-item__pic {
+  position: relative;
+  padding-top: 350px;
+}
+.service-item__pic > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.service-item__content {
+  padding: 9px 20px 35px;
+  text-align: center;
+  border: 1px solid #e3e1d5;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.service-item__title {
+  margin-bottom: 14px;
+}
+
+.service-item__desc {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #717171;
 }/*# sourceMappingURL=style.css.map */

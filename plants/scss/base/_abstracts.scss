@@ -2,6 +2,7 @@ $color-prim: #499a18;
 $color-accent: #e06733;
 $color-bg: #edf2ec;
 $color-light: #ffffff;
+$color-border: #e3e1d5;
 $color-gray: #717171;
 $color-text: #636060;
 $color-links: #010201;
@@ -12,11 +13,10 @@ $content-width: 1222px;
 
 // Mixins -----------------------------
 
-@mixin font($size, $height: 1, $color: inherit, $weight: 400, $style: normal) {
+@mixin font($size, $height: 1, $color: inherit, $weight: 400) {
   font-size: $size;
   line-height: $height;
   font-weight: $weight;
-  font-style: $style;
   color: $color;
 }
 
