@@ -17,8 +17,27 @@
     border-radius: 10px;
   }
 
+  &_prices {
+    width: 162px;
+    font-weight: 700;
+  }
+
   @include hov {
     color: $color-light;
     background: $color-accent;
+  }
+}
+
+//------------------------------
+
+.dropdown {
+  width: 16px;
+  height: 16px;
+  background: $color-circle url('../assets/svg/arrow.svg') no-repeat center;
+  border-radius: 50%;
+
+  @include hov {
+    background: $color-circle2;
+    transform: rotate(-180deg);
   }
 }
