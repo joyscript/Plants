@@ -1,0 +1,46 @@
+.welcome {
+  background: $color-bg;
+}
+
+.welcome__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 62px 109px 55px;
+}
+
+.welcome__pic {
+  margin-top: -9px; //PP
+  margin-left: -9px; //PP
+}
+
+.welcome__content {
+  max-width: 549px;
+  padding-top: 36px;
+}
+
+.welcome__title {
+  margin-bottom: 44px;
+}
+
+.welcome__span {
+  color: $color-prim;
+}
+
+.welcome__text {
+  max-width: 525px;
+  margin-bottom: 47px;
+  line-height: 35px;
+}
+
+.welcome__button {
+  padding: 10px 26px;
+  @include font(16px, 20px, $color-dark);
+  text-transform: uppercase;
+  border: 2px solid $color-accent;
+  border-radius: 10px;
+
+  @include hov {
+    color: $color-light;
+    background: $color-accent;
+  }
+}

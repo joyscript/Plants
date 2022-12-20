@@ -201,7 +201,7 @@ h2 {
   color: #499a18;
 }
 
-h2 {
+h3 {
   font-size: 20px;
   line-height: 20px;
   font-weight: 700;
@@ -258,6 +258,8 @@ span {
 
 button {
   display: block;
+  background: transparent;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -291,7 +293,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 }
 
 .logo {
-  padding: 10px 10px 10px 22px;
+  padding: 10px 10px 10px 23px;
   color: #000000;
   background: url("../assets/svg/logo.svg") no-repeat;
   background-position: 0 10px;
@@ -300,10 +302,60 @@ a:hover, a:focus, a:focus-visible, a:active {
 .nav__list {
   display: flex;
   gap: 27px;
-  margin-right: -8px;
+  margin-right: -9px;
 }
 
 .nav__link {
   padding: 10px;
   color: #010201;
+}
+
+.welcome {
+  background: #edf2ec;
+}
+
+.welcome__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 62px 109px 55px;
+}
+
+.welcome__pic {
+  margin-top: -9px;
+  margin-left: -9px;
+}
+
+.welcome__content {
+  max-width: 549px;
+  padding-top: 36px;
+}
+
+.welcome__title {
+  margin-bottom: 44px;
+}
+
+.welcome__span {
+  color: #499a18;
+}
+
+.welcome__text {
+  max-width: 525px;
+  margin-bottom: 47px;
+  line-height: 35px;
+}
+
+.welcome__button {
+  padding: 10px 26px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  text-transform: uppercase;
+  border: 2px solid #e06733;
+  border-radius: 10px;
+}
+.welcome__button:hover, .welcome__button:focus, .welcome__button:focus-visible, .welcome__button:active {
+  color: #ffffff;
+  background: #e06733;
 }/*# sourceMappingURL=style.css.map */

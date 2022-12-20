@@ -17,6 +17,6 @@ h2 {
   @include font(40px, 52px, $color-prim);
 }
 
-h2 {
+h3 {
   @include font(20px, 20px, $color-accent, 700);
 }
