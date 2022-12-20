@@ -314,6 +314,9 @@ a:hover, a:focus, a:focus-visible, a:active {
   background: #aea1a1;
   transform: rotate(-180deg);
 }
+.dropdown_contacts {
+  background-color: #aea1a1;
+}
 
 .header {
   background: #edf2ec;
@@ -347,7 +350,9 @@ a:hover, a:focus, a:focus-visible, a:active {
   color: #010201;
 }
 
-.welcome {
+.welcome,
+.service,
+.contacts {
   background: #edf2ec;
 }
 
@@ -399,10 +404,6 @@ a:hover, a:focus, a:focus-visible, a:active {
 
 .about__span {
   color: #e06733;
-}
-
-.service {
-  background: #edf2ec;
 }
 
 .service__wrapper {
@@ -477,7 +478,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 .prices__wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 40px 109px 110px;
+  padding: 40px 109px 108px;
 }
 
 .prices__right-column {
@@ -538,4 +539,39 @@ a:hover, a:focus, a:focus-visible, a:active {
 .price-item__title {
   padding-top: 1px;
   color: #000000;
+}
+
+.contacts__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 109px 0;
+}
+
+.contacts__pic {
+  margin-top: -7px;
+}
+
+.contacts__title {
+  margin-left: 45px;
+  font-weight: 700;
+}
+
+.contacts__select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 88px;
+  padding: 5px 35px 5px 20px;
+  width: 450px;
+  height: 50px;
+  background: #d6e7d2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contacts__span {
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #717171;
+  letter-spacing: 0.05em;
 }/*# sourceMappingURL=style.css.map */
