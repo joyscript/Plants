@@ -224,6 +224,7 @@ html {
 
 body {
   min-width: 320px;
+  background: #ffffff;
 }
 
 main,
@@ -250,10 +251,6 @@ ul {
 img {
   display: block;
   max-width: 100%;
-}
-
-span {
-  display: inline-block;
 }
 
 button {
@@ -358,4 +355,24 @@ a:hover, a:focus, a:focus-visible, a:active {
 .welcome__button:hover, .welcome__button:focus, .welcome__button:focus-visible, .welcome__button:active {
   color: #ffffff;
   background: #e06733;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 93px 109px 94px;
+}
+
+.about__content {
+  max-width: 605px;
+  padding-top: 68px;
+}
+
+.about__title {
+  max-width: 463px;
+  margin-bottom: 38px;
+}
+
+.about__span {
+  color: #e06733;
 }/*# sourceMappingURL=style.css.map */

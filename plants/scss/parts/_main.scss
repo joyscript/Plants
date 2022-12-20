@@ -44,3 +44,27 @@
     background: $color-accent;
   }
 }
+
+// -------------------------------------------------
+
+.about__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 93px 109px 94px;
+}
+
+.about__content {
+  max-width: 605px;
+  padding-top: 68px;
+}
+
+.about__title {
+  max-width: 463px;
+  margin-bottom: 38px;
+}
+
+.about__span {
+  color: $color-accent;
+}
+
+// -------------------------------------------------
