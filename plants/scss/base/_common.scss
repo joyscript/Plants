@@ -31,17 +31,38 @@
 //------------------------------
 
 .dropdown {
-  width: 16px;
-  height: 16px;
-  background: $color-circle url('../assets/svg/arrow.svg') no-repeat center;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: #d9d9d9;
+  border: 10px solid $color-bg;
   border-radius: 50%;
 
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: url('../assets/svg/arrow.svg') no-repeat center;
+    filter: invert(53%) sepia(0%) saturate(0%) hue-rotate(299deg) brightness(94%) contrast(92%);
+  }
+
   @include hov {
-    background: $color-circle2;
-    transform: rotate(-180deg);
+    background: #aea1a1;
+    transform: rotate(180deg);
+
+    &::after {
+      filter: invert(100%);
+    }
   }
 
   &_contacts {
-    background-color: $color-circle2;
+    background: #aea1a1;
+    border-color: #d6e7d2;
+    &::after {
+      filter: invert(100%);
+    }
   }
 }

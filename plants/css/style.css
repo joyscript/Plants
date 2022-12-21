@@ -306,17 +306,36 @@ a:hover, a:focus, a:focus-visible, a:active {
 }
 
 .dropdown {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: #d9d9d9;
+  border: 10px solid #edf2ec;
+  border-radius: 50%;
+}
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 16px;
   height: 16px;
-  background: #d9d9d9 url("../assets/svg/arrow.svg") no-repeat center;
-  border-radius: 50%;
+  background: url("../assets/svg/arrow.svg") no-repeat center;
+  filter: invert(53%) sepia(0%) saturate(0%) hue-rotate(299deg) brightness(94%) contrast(92%);
 }
 .dropdown:hover, .dropdown:focus, .dropdown:focus-visible, .dropdown:active {
   background: #aea1a1;
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
+}
+.dropdown:hover::after, .dropdown:focus::after, .dropdown:focus-visible::after, .dropdown:active::after {
+  filter: invert(100%);
 }
 .dropdown_contacts {
-  background-color: #aea1a1;
+  background: #aea1a1;
+  border-color: #d6e7d2;
+}
+.dropdown_contacts::after {
+  filter: invert(100%);
 }
 
 .header {
@@ -528,7 +547,7 @@ a:hover, a:focus, a:focus-visible, a:active {
   align-items: center;
   width: 250px;
   height: 50px;
-  padding: 10px 40px;
+  padding: 10px 30px 10px 40px;
   background: #edf2ec;
   border-radius: 20px;
 }
@@ -562,7 +581,7 @@ a:hover, a:focus, a:focus-visible, a:active {
   justify-content: space-between;
   align-items: center;
   margin-top: 88px;
-  padding: 5px 35px 5px 20px;
+  padding: 5px 25px 5px 20px;
   width: 450px;
   height: 50px;
   background: #d6e7d2;
