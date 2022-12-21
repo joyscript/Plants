@@ -1,0 +1,30 @@
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 109px;
+  color: $color-dark;
+  line-height: 50px;
+}
+
+.footer__content {
+  display: flex;
+  gap: 21px; //PP
+  margin-right: 20px; //PP
+}
+
+.soclist {
+  display: flex;
+  gap: 20px;
+}
+
+.soclist__link {
+  display: block;
+  min-width: 32px;
+  min-height: 32px;
+  font-size: 14px;
+  transition: filter 0.3s;
+  @include hov {
+    filter: invert(42%) sepia(88%) saturate(500%) hue-rotate(-26deg) brightness(98%) contrast(88%);
+  }
+}

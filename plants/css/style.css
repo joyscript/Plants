@@ -260,7 +260,8 @@ a {
   display: inline-block;
   text-decoration: none;
   border-radius: 2px;
-  transition: color 0.3s;
+  transition: 0.3s;
+  color: inherit;
 }
 a:hover, a:focus, a:focus-visible, a:active {
   color: #e06733;
@@ -574,4 +575,35 @@ a:hover, a:focus, a:focus-visible, a:active {
   font-weight: 400;
   color: #717171;
   letter-spacing: 0.05em;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 109px;
+  color: #000000;
+  line-height: 50px;
+}
+
+.footer__content {
+  display: flex;
+  gap: 21px;
+  margin-right: 20px;
+}
+
+.soclist {
+  display: flex;
+  gap: 20px;
+}
+
+.soclist__link {
+  display: block;
+  min-width: 32px;
+  min-height: 32px;
+  font-size: 14px;
+  transition: filter 0.3s;
+}
+.soclist__link:hover, .soclist__link:focus, .soclist__link:focus-visible, .soclist__link:active {
+  filter: invert(42%) sepia(88%) saturate(500%) hue-rotate(-26deg) brightness(98%) contrast(88%);
 }/*# sourceMappingURL=style.css.map */
