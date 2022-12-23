@@ -27,6 +27,7 @@
     text-transform: uppercase;
     border-width: 2px;
     border-radius: 10px;
+    
     @include media-s {
       width: 100px;
       min-height: 34px;

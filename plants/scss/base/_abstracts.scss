@@ -49,14 +49,20 @@ $content-width: 1222px;
 
 // -----------------------------------------------------
 
-@mixin media-l {
+@mixin media-d {
   @media (max-width: ($wrapper-width - 0.02px)) {
     @content;
   }
 }
 
+@mixin media-l {
+  @media (max-width: 1319.98px) {
+    @content;
+  }
+}
+
 @mixin media-t {
-  @media (max-width: 1024px) {
+  @media (max-width: 1023.98px) {
     @content;
   }
 }
@@ -68,7 +74,7 @@ $content-width: 1222px;
 }
 
 @mixin media-s {
-  @media (max-width: 479.98px) {
+  @media (max-width: 599.98px) {
     @content;
   }
 }

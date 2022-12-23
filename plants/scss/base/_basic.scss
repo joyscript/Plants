@@ -68,9 +68,14 @@ a {
   margin: 0 auto;
   padding: 40px 109px;
 
-  @include media-t {
+  @include media-l {
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  @include media-m {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   @include media-s {

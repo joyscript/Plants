@@ -17,8 +17,10 @@
     font-size: 40px;
     line-height: 52px;
   }
-  @include media-s {
+  @include media-m {
     margin-bottom: 81px;
+  }
+  @include media-s {
     font-size: 25px;
     line-height: 33px;
   }

@@ -3,7 +3,7 @@
 
   @include media-t {
     padding-top: 60px;
-    padding-bottom: 68px;
+    padding-bottom: 70px;
   }
   @include media-s {
     padding-top: 30px;
@@ -13,18 +13,18 @@
 
 .service__content {
   display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
   margin-bottom: 80px;
   @include media-t {
-    display: block;
-    margin-bottom: 38px;
+    margin-bottom: 40px;
   }
 }
 
 .service__title {
   max-width: 306px;
-  margin-right: 140px;
+  margin-right: 104px;
   @include media-t {
-    margin-bottom: 38px;
     margin-right: 0;
   }
   @include media-s {
@@ -38,6 +38,9 @@
   flex-wrap: wrap;
   gap: 38px;
   padding-top: 4px; //PP
+  @include media-m {
+    gap: 20px;
+  }
   @include media-s {
     padding-top: 0;
     gap: 10px 9px;
@@ -48,23 +51,30 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 55px;
+  gap: 55px 40px;
+
   @include media-t {
-    gap: 36px;
+    justify-content: center;
+    gap: 38px 107px;
+  }
+  @include media-m {
+    gap: 38px 50px;
   }
   @include media-s {
-    justify-content: center;
     gap: 32px;
   }
 }
 
 .service-item {
   width: 330px;
+  max-width: 30%;
+  min-width: 280px;
   border-radius: 20px;
   overflow: hidden;
 
   @include media-t {
-    width: 280px;
+    max-width: 280px;
+    min-width: none;
   }
 }
 
@@ -81,7 +91,7 @@
   border-bottom-right-radius: 20px;
 
   @include media-t {
-    padding: 10px 38px 20px;
+    padding: 10px 38px 18px;
   }
 }
 

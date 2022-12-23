@@ -9,6 +9,9 @@
     padding-top: 40px;
     padding-bottom: 70px;
   }
+  @include media-m {
+    gap: 15px;
+  }
   @include media-s {
     padding-top: 26px;
     padding-bottom: 24px;
@@ -20,8 +23,8 @@
   margin-left: -9px; //PP
   @include media-t {
     width: 290px;
-    margin-top: -6px;
-    margin-right: -3px;
+    margin-top: -6px; //PP
+    margin-right: -3px; //PP
   }
   @include media-s {
     display: none;
@@ -32,10 +35,16 @@
   max-width: 549px;
   padding-top: 36px;
 
+  @include media-l {
+    padding-top: 0;
+  }
   @include media-t {
     order: -1;
-    max-width: 340px;
-    padding-top: 0;
+    flex-shrink: 0;
+    width: 340px;
+  }
+  @include media-s {
+    width: 100%;
   }
 }
 
@@ -46,6 +55,7 @@
     margin-bottom: 30px;
   }
   @include media-s {
+    max-width: 330px;
     margin-bottom: 20px;
   }
 }
@@ -67,6 +77,7 @@
     line-height: 25px;
   }
   @include media-s {
+    max-width: 400px;
     margin-bottom: 26px;
     margin-left: 0;
   }

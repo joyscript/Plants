@@ -10,7 +10,7 @@
     padding-top: 35px;
     padding-bottom: 32px;
   }
-  @include media-s {
+  @include media-m {
     padding-top: 34px;
     padding-bottom: 36px;
   }
@@ -23,7 +23,7 @@
   background: url('../assets/svg/logo.svg') no-repeat;
   background-position-y: 9px;
 
-  @include media-s {
+  @include media-m {
     padding: 9px 10px 1px 21px;
     line-height: 16px;
     background-position-y: 2px;
@@ -34,7 +34,7 @@
   display: flex;
   gap: 27px;
   margin-right: -9px;
-  @include media-s {
+  @include media-m {
     display: none;
   }
 }
