@@ -11,6 +11,14 @@
     padding-bottom: 18px;
     line-height: 24px;
   }
+  @include media-t {
+    padding-top: 22px;
+    padding-bottom: 7px;
+  }
+  @include media-s {
+    gap: 3px;
+    font-size: 20px;
+  }
 }
 
 .footer__content {
@@ -20,6 +28,9 @@
   @include media-t {
     gap: 23px;
     margin-right: 4px;
+  }
+  @include media-s {
+    margin-bottom: 13px;
   }
 }
 

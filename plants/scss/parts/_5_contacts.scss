@@ -4,6 +4,9 @@
   @include media-t {
     padding-top: 40px;
   }
+  @include media-s {
+    padding-top: 25px;
+  }
 }
 
 .contacts__title {
@@ -13,6 +16,11 @@
     margin-bottom: 99px;
     font-size: 40px;
     line-height: 52px;
+  }
+  @include media-s {
+    margin-bottom: 81px;
+    font-size: 25px;
+    line-height: 33px;
   }
 }
 
@@ -33,6 +41,10 @@
     margin-top: 0;
     margin-left: 20px;
   }
+  @include media-s {
+    width: 100px;
+    margin-left: -5px;
+  }
 }
 
 .contacts__select {
@@ -48,6 +60,12 @@
   @include media-t {
     margin-top: 0;
     margin-bottom: 249px;
+  }
+  @include media-s {
+    width: 300px;
+    max-width: 100%;
+    margin-bottom: 132px;
+    padding-right: 12px;
   }
 }
 

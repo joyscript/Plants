@@ -6,6 +6,13 @@
   @include media-t {
     padding-bottom: 81px;
   }
+  @include media-s {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    gap: 20px;
+  }
 }
 
 .prices__title {
@@ -19,6 +26,12 @@
     margin-left: 15px;
     line-height: 42px;
   }
+  @include media-s {
+    margin-bottom: 37px;
+    margin-left: 0;
+    line-height: 30px;
+    text-align: center;
+  }
 }
 
 .prices__right-column {
@@ -27,7 +40,13 @@
   align-items: flex-end;
   max-width: 452px;
   @include media-t {
+    max-width: 296px;
     padding-top: 99px;
+  }
+  @include media-s {
+    align-items: center;
+    max-width: 240px;
+    padding-top: 0;
   }
 }
 
@@ -39,6 +58,11 @@
     margin-bottom: 29px;
     font-size: 25px;
     line-height: 35px;
+  }
+  @include media-s {
+    margin-bottom: 19px;
+    font-size: 20px;
+    text-align: center;
   }
 }
 
@@ -53,12 +77,18 @@
     margin-top: 29px;
     margin-right: -10px;
   }
+  @include media-s {
+    display: none;
+  }
 }
 
 .prices__accordeon {
   padding: 33px 40px;
   border: 1px solid $color-border;
   border-radius: 20px;
+  @include media-s {
+    padding: 28px 21px;
+  }
 }
 
 .price-item {
@@ -70,13 +100,24 @@
   padding: 10px 30px 10px 40px;
   background: $color-bg;
   border-radius: 20px;
+  @include media-s {
+    width: 180px;
+    height: 50px;
+    padding-left: 30px;
+  }
 }
 
 .price-item:not(:last-child) {
   margin-bottom: 32px;
+  @include media-s {
+    margin-bottom: 14px;
+  }
 }
 
 .price-item__title {
   padding-top: 1px; //PP
   color: $color-dark;
+  @include media-s {
+    font-size: 15px;
+  }
 }

@@ -5,29 +5,41 @@
   padding-top: 42px;
   padding-bottom: 42px;
   font-family: 'Inika', serif;
-  font-size: 16px;
-  line-height: 50px;
 
   @include media-t {
     padding-top: 35px;
     padding-bottom: 32px;
   }
+  @include media-s {
+    padding-top: 34px;
+    padding-bottom: 36px;
+  }
 }
 
 .logo {
-  padding: 0 10px 0 23px;
-  color: $color-dark;
+  padding-right: 10px;
+  padding-left: 23px;
+  @include font(16px, 50px, $color-dark);
   background: url('../assets/svg/logo.svg') no-repeat;
-  background-position: 0 10px;
+  background-position-y: 9px;
+
+  @include media-s {
+    padding: 9px 10px 1px 21px;
+    line-height: 16px;
+    background-position-y: 2px;
+  }
 }
 
 .nav__list {
   display: flex;
   gap: 27px;
   margin-right: -9px;
+  @include media-s {
+    display: none;
+  }
 }
 
 .nav__link {
   padding: 0 10px;
-  color: $color-links;
+  @include font(16px, 50px, $color-links);
 }

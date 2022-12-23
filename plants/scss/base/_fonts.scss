@@ -6,6 +6,11 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include media-s {
+    font-size: 16px;
+    line-height: 25px;
+  }
 }
 
 h1 {
@@ -13,6 +18,10 @@ h1 {
 
   @include media-t {
     font-size: 35px;
+  }
+  @include media-s {
+    font-size: 25px;
+    line-height: 35px;
   }
 }
 
@@ -23,6 +32,10 @@ h2 {
   @include media-t {
     font-size: 35px;
     line-height: 46px;
+  }
+  @include media-s {
+    font-size: 25px;
+    line-height: 33px;
   }
 }
 

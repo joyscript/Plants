@@ -5,29 +5,43 @@
     padding-top: 60px;
     padding-bottom: 68px;
   }
+  @include media-s {
+    padding-top: 30px;
+    padding-bottom: 26px;
+  }
 }
 
 .service__content {
   display: flex;
-  gap: 38px;
   margin-bottom: 80px;
-
   @include media-t {
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+    display: block;
+    margin-bottom: 38px;
   }
 }
 
 .service__title {
   max-width: 306px;
-  margin-right: 102px;
+  margin-right: 140px;
+  @include media-t {
+    margin-bottom: 38px;
+    margin-right: 0;
+  }
+  @include media-s {
+    max-width: 187px;
+  }
 }
 
 .service__buttons {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 38px;
   padding-top: 4px; //PP
+  @include media-s {
+    padding-top: 0;
+    gap: 10px 9px;
+  }
 }
 
 .services {
@@ -37,6 +51,10 @@
   gap: 55px;
   @include media-t {
     gap: 36px;
+  }
+  @include media-s {
+    justify-content: center;
+    gap: 32px;
   }
 }
 
@@ -63,7 +81,7 @@
   border-bottom-right-radius: 20px;
 
   @include media-t {
-    padding: 10px 40px 20px;
+    padding: 10px 38px 20px;
   }
 }
 

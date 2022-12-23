@@ -6,10 +6,15 @@
   padding-bottom: 94px;
 
   @include media-t {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top: 40px;
     padding-bottom: 95px;
+  }
+  @include media-s {
+    gap: 0px;
+    padding-top: 30px;
+    padding-bottom: 27px;
   }
 }
 
@@ -32,15 +37,29 @@
     margin: 0 auto 50px;
     text-align: center;
   }
+  @include media-s {
+    margin-bottom: 13px;
+  }
 }
 
 .about__span {
   color: $color-accent;
 }
 
-.about__pic{
+.about__text {
+  margin-bottom: 28px;
+  @include media-s {
+    margin-bottom: 0;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+  }
+}
+
+.about__pic {
   @include media-t {
     width: 250px;
-    margin-top: 28px;
+  }
+  @include media-t {
+    width: 150px;
   }
 }
