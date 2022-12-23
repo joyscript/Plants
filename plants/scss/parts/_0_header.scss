@@ -1,19 +1,21 @@
-.header {
-  background: $color-bg;
-}
-
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 42px 109px;
+  padding-top: 42px;
+  padding-bottom: 42px;
   font-family: 'Inika', serif;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 50px;
+
+  @include media-t {
+    padding-top: 35px;
+    padding-bottom: 32px;
+  }
 }
 
 .logo {
-  padding: 10px 10px 10px 23px;
+  padding: 0 10px 0 23px;
   color: $color-dark;
   background: url('../assets/svg/logo.svg') no-repeat;
   background-position: 0 10px;
@@ -26,6 +28,6 @@
 }
 
 .nav__link {
-  padding: 10px;
+  padding: 0 10px;
   color: $color-links;
 }

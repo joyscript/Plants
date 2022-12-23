@@ -66,4 +66,17 @@ a {
 [class*='__wrapper'] {
   max-width: $wrapper-width;
   margin: 0 auto;
+  padding: 40px 109px;
+
+  @include media-t {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.header,
+.welcome,
+.service,
+.contacts {
+  background: $color-bg;
 }
