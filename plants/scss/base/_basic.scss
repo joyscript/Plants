@@ -14,6 +14,26 @@ html {
 body {
   min-width: 320px;
   background: $color-light;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    background: transparent;
+    transition: background 0.3s;
+  }
+
+  &.menu-open {
+    overflow: hidden;
+
+    &::after {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 main,

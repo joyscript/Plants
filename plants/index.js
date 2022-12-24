@@ -8,3 +8,21 @@ console.log(`1. Вёрстка валидная +10
 
 *Картинки в секции service шире на 1px (330px вместо 329px) - исправлена ошибка в макете.
 `);
+
+// ---------------------------------------------------------------
+
+const burger = document.querySelector('.burger');
+
+const closeMenu = (e) => {
+  if (e.target.classList.contains('nav__link') || !e.target.closest('.nav')) {
+    document.body.classList.remove('menu-open');
+  }
+};
+
+burger.addEventListener('click', () => {
+  document.body.classList.toggle('menu-open');
+
+  document.body.classList.contains('menu-open')
+    ? document.body.addEventListener('click', closeMenu)
+    : document.body.removeEventListener('click', closeMenu);
+});
