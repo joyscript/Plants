@@ -643,7 +643,6 @@ a:hover, a:focus, a:focus-visible, a:active {
   .about__text {
     margin-bottom: 0;
     font-size: 15px;
-    letter-spacing: 0.2px;
   }
 }
 
@@ -670,7 +669,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 @media (max-width: 599.98px) {
   .service__wrapper {
     padding-top: 30px;
-    padding-bottom: 26px;
+    padding-bottom: 27px;
   }
 }
 
@@ -716,7 +715,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 @media (max-width: 599.98px) {
   .service__buttons {
     padding-top: 0;
-    gap: 10px 9px;
+    gap: 9px 10px;
   }
 }
 
@@ -739,7 +738,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 }
 @media (max-width: 599.98px) {
   .services {
-    gap: 32px;
+    gap: 34px;
   }
 }
 
@@ -753,7 +752,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 @media (max-width: 1023.98px) {
   .service-item {
     max-width: 280px;
-    min-width: none;
+    min-width: auto;
   }
 }
 
