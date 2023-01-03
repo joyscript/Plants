@@ -1,16 +1,3 @@
-console.log(`1. Вёрстка валидная +10
-2. Вёрстка семантическая +20
-3. Вёрстка соответствует макету +48
-4. Требования к css + 12
-5. Интерактивность, реализуемая через css +20
-
-Все пункты выполнены. Самооценка - 110 баллов.
-
-*Картинки в секции service шире на 1px (330px вместо 329px) - исправлена ошибка в макете.
-`);
-
-// ---------------------------------------------------------------
-
 const burger = document.querySelector('.burger');
 
 const closeMenu = (e) => {
@@ -25,4 +12,29 @@ burger.addEventListener('click', () => {
   document.body.classList.contains('menu-open')
     ? document.body.addEventListener('click', closeMenu)
     : document.body.removeEventListener('click', closeMenu);
+});
+
+// ------------------------------------------------------------------------------
+
+const buttonsField = document.querySelector('.service__buttons');
+const serviceItems = document.querySelectorAll('.service-item');
+let activeBtns = [];
+
+buttonsField.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('button') || activeBtns.includes(e.target)) return;
+  const button = e.target;
+
+  if (activeBtns.length == 2) {
+    activeBtns.forEach((btn) => btn.classList.remove('active'));
+    activeBtns = [];
+  }
+
+  button.classList.add('active');
+  activeBtns.push(button);
+
+  serviceItems.forEach((item) => {
+    activeBtns.find((button) => button.innerText == item.dataset.service)
+      ? item.classList.remove('blurred')
+      : item.classList.add('blurred');
+  });
 });

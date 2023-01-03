@@ -27,7 +27,7 @@
     text-transform: uppercase;
     border-width: 2px;
     border-radius: 10px;
-    
+
     @include media-s {
       width: 100px;
       min-height: 34px;
@@ -38,6 +38,24 @@
   @include hov {
     color: $color-light;
     background: $color-accent;
+  }
+
+  &.active {
+    color: $color-light;
+    background: $color-accent;
+    animation: anim 0.4s ease;
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 

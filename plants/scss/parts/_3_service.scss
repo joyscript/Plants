@@ -71,6 +71,11 @@
   min-width: 280px;
   border-radius: 20px;
   overflow: hidden;
+  transition: filter 0.3s;
+
+  &.blurred {
+    filter: blur(2px);
+  }
 
   @include media-t {
     max-width: 280px;

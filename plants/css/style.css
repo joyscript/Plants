@@ -391,7 +391,36 @@ a:hover, a:focus, a:focus-visible, a:active {
   color: #ffffff;
   background: #e06733;
 }
+.button.active {
+  color: #ffffff;
+  background: #e06733;
+  -webkit-animation: anim 0.4s ease;
+          animation: anim 0.4s ease;
+}
 
+@-webkit-keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .dropdown {
   position: relative;
   width: 36px;
@@ -832,6 +861,10 @@ a:hover, a:focus, a:focus-visible, a:active {
   min-width: 280px;
   border-radius: 20px;
   overflow: hidden;
+  transition: filter 0.3s;
+}
+.service-item.blurred {
+  filter: blur(2px);
 }
 @media (max-width: 1023.9px) {
   .service-item {
