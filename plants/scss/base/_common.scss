@@ -84,8 +84,15 @@
 
   @include hov {
     background: #aea1a1;
-    transform: rotate(180deg);
+    &::after {
+      filter: invert(100%);
+    }
+  }
 
+  .price-item.active & {
+    transform: rotate(180deg);
+    border-color: $color-bg2;
+    background: #aea1a1;
     &::after {
       filter: invert(100%);
     }

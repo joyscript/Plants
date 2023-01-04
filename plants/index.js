@@ -38,3 +38,24 @@ buttonsField.addEventListener('click', (e) => {
       : item.classList.add('blurred');
   });
 });
+
+// ------------------------------------------------------------------------------
+
+const accordeon = document.querySelector('.prices__accordeon');
+
+accordeon.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('dropdown')) return;
+  const curItem = e.target.closest('.price-item');
+  const activeItem = accordeon.querySelector('.price-item.active');
+
+  if (activeItem && activeItem != curItem) {
+    activeItem.classList.remove('active');
+    activeItem.style.height = '';
+  }
+
+  curItem.classList.toggle('active');
+
+  curItem.classList.contains('active')
+    ? (curItem.style.height = 50 + parseInt(getComputedStyle(curItem.lastElementChild).height) + 'px')
+    : (curItem.style.height = '');
+});

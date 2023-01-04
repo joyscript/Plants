@@ -90,6 +90,8 @@
   }
 }
 
+// ------------------------------------
+
 .prices__accordeon {
   padding: 33px 40px;
   border: 1px solid $color-border;
@@ -100,18 +102,22 @@
 }
 
 .price-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 250px;
   height: 50px;
-  padding: 10px 30px 10px 40px;
+  padding-right: 30px;
+  padding-left: 40px;
   background: $color-bg;
   border-radius: 20px;
+  transition: 0.3s;
+  overflow: hidden;
+
   @include media-s {
     width: 180px;
-    height: 50px;
     padding-left: 30px;
+  }
+
+  &.active {
+    background: $color-bg2;
   }
 }
 
@@ -122,10 +128,63 @@
   }
 }
 
+.price-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-bottom: -7px;
+}
+
 .price-item__title {
-  padding-top: 1px; //PP
   color: $color-dark;
   @include media-s {
     font-size: 15px;
+  }
+}
+
+.price-item__content {
+  padding-bottom: 7px;
+}
+
+.price-item__desc {
+  max-width: 167px;
+  padding: 6px 0;
+  @include font(10px, 10px, $color-gray, 300);
+  border-top: 0.5px solid #aea1a1;
+  opacity: 0;
+  transition: 0.3s;
+
+  .price-item.active & {
+    opacity: 1;
+  }
+}
+
+.price-item__price {
+  margin-bottom: 12px;
+  @include font(12px, 20px, $color-dark, 400);
+}
+
+.price-item__currency {
+  @include font(12px, 20px, $color-accent, 700);
+}
+
+.price-item__amount {
+  @include font(16px, 20px, $color-accent, 700);
+}
+
+.price-item__button {
+  display: block;
+  width: 86px;
+  height: 25px;
+  font-family: Inter, sans-serif;
+  @include font(14px, 25px, $color-gray, 700);
+  text-align: center;
+  background: $color-light;
+  border-radius: 10px;
+
+  @include hov {
+    color: $color-light;
+    background: $color-accent;
   }
 }
