@@ -59,3 +59,53 @@ accordeon.addEventListener('click', (e) => {
     ? (curItem.style.height = 50 + parseInt(getComputedStyle(curItem.lastElementChild).height) + 'px')
     : (curItem.style.height = '');
 });
+
+// ------------------------------------------------------------------------------
+
+const select = document.querySelector('.select');
+const selectHeader = select.querySelector('.select__header');
+const infoCard = document.querySelector('.info-card');
+const infoFields = infoCard.querySelectorAll('[data-info]');
+const infoButton = infoCard.querySelector('.info-card__button');
+const contactsInfo = [
+  ['Canandaigua, NY', '+1 585 393 0001', '151 Charlotte Street'],
+  ['New York City', '+1 212 456 0002', '9 East 91st Street'],
+  ['Yonkers, NY', '+1 914 678 0003', '511 Warburton Ave'],
+  ['Sherrill, NY', '+1 315 908 0004', '14 WEST Noyes BLVD'],
+];
+
+const openSelect = () => {
+  select.classList.add('open');
+  select.classList.remove('selected');
+  select.style.height = 50 + parseInt(getComputedStyle(select.lastElementChild).height) + 'px';
+  if (selectHeader.innerText != 'City') selectHeader.innerText = 'City';
+  document.body.addEventListener('click', closeSelectOnBodyClick);
+};
+
+const closeSelect = () => {
+  select.classList.remove('open');
+  select.style.height = '';
+  document.body.removeEventListener('click', closeSelectOnBodyClick);
+};
+
+const closeSelectOnBodyClick = (e) => {
+  if (e.target.closest('.select')) return;
+  closeSelect();
+};
+
+const getInfoCard = (city) => {
+  const curCity = contactsInfo.find((item) => item[0] == city);
+  infoFields.forEach((field, i) => (field.innerText = curCity[i]));
+  infoButton.href = `tel:${curCity[1].replace(/ /g, '')}`;
+};
+
+select.addEventListener('click', (e) => {
+  if (e.target == selectHeader) select.classList.contains('open') ? closeSelect() : openSelect();
+
+  if (e.target.classList.contains('select__option')) {
+    selectHeader.innerText = e.target.value;
+    select.classList.add('selected');
+    getInfoCard(e.target.value);
+    closeSelect();
+  }
+});
