@@ -64,6 +64,7 @@ accordeon.addEventListener('click', (e) => {
 
 const select = document.querySelector('.select');
 const selectHeader = select.querySelector('.select__header');
+const selectSelect = select.querySelector('.select__select');
 const infoCard = document.querySelector('.info-card');
 const infoFields = infoCard.querySelectorAll('[data-info]');
 const infoButton = infoCard.querySelector('.info-card__button');
@@ -75,22 +76,16 @@ const contactsInfo = [
 ];
 
 const openSelect = () => {
-  select.classList.add('open');
   select.classList.remove('selected');
-  select.style.height = 50 + parseInt(getComputedStyle(select.lastElementChild).height) + 'px';
   if (selectHeader.innerText != 'City') selectHeader.innerText = 'City';
-  document.body.addEventListener('click', closeSelectOnBodyClick);
+  document.body.addEventListener('click', closeSelect);
 };
 
-const closeSelect = () => {
-  select.classList.remove('open');
-  select.style.height = '';
-  document.body.removeEventListener('click', closeSelectOnBodyClick);
-};
-
-const closeSelectOnBodyClick = (e) => {
-  if (e.target.closest('.select')) return;
-  closeSelect();
+const closeSelect = (e) => {
+  if (e.target.closest('.select__select') || !e.target.closest('.select')) {
+    select.classList.remove('open');
+    document.body.removeEventListener('click', closeSelect);
+  }
 };
 
 const getInfoCard = (city) => {
@@ -99,13 +94,14 @@ const getInfoCard = (city) => {
   infoButton.href = `tel:${curCity[1].replace(/ /g, '')}`;
 };
 
-select.addEventListener('click', (e) => {
-  if (e.target == selectHeader) select.classList.contains('open') ? closeSelect() : openSelect();
+selectHeader.addEventListener('click', (e) => {
+  select.classList.toggle('open');
+  select.classList.contains('open') ? openSelect() : closeSelect(e);
+});
 
-  if (e.target.classList.contains('select__option')) {
-    selectHeader.innerText = e.target.value;
-    select.classList.add('selected');
-    getInfoCard(e.target.value);
-    closeSelect();
-  }
+selectSelect.addEventListener('change', (e) => {
+  selectHeader.innerText = e.target.value;
+  select.classList.add('selected');
+  getInfoCard(e.target.value);
+  closeSelect(e);
 });

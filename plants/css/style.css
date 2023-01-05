@@ -346,7 +346,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 
 .button {
   width: 161px;
-  min-height: 50px;
+  height: 50px;
   padding: 5px 10px;
   font-family: Inika, serif;
   font-size: 20px;
@@ -363,14 +363,14 @@ a:hover, a:focus, a:focus-visible, a:active {
 @media (max-width: 599.9px) {
   .button {
     width: 121px;
-    min-height: 35px;
+    height: 35px;
     font-size: 15px;
     line-height: 20px;
   }
 }
 .button_welcome {
   width: 158px;
-  min-height: 44px;
+  height: 44px;
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 20px;
@@ -383,7 +383,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 @media (max-width: 599.9px) {
   .button_welcome {
     width: 100px;
-    min-height: 34px;
+    height: 34px;
     font-size: 10px;
   }
 }
@@ -1178,14 +1178,8 @@ a:hover, a:focus, a:focus-visible, a:active {
 }
 @media (max-width: 1023.9px) {
   .contacts__title {
-    margin-bottom: 99px;
     font-size: 40px;
     line-height: 52px;
-  }
-}
-@media (max-width: 767.9px) {
-  .contacts__title {
-    margin-bottom: 81px;
   }
 }
 @media (max-width: 599.9px) {
@@ -1224,31 +1218,50 @@ a:hover, a:focus, a:focus-visible, a:active {
   }
 }
 
-.contacts__select {
+.contacts__right-column {
   position: relative;
-  z-index: 1;
+}
+@media (max-width: 1023.9px) {
+  .contacts__right-column {
+    max-width: 100%;
+  }
+}
+
+.contacts__select {
   margin-top: 36px;
-  margin-bottom: 47px;
+}
+@media (max-width: 1023.9px) {
+  .contacts__select {
+    margin-top: 100px;
+    margin-bottom: 250px;
+  }
+  .contacts__select.open, .contacts__select.selected {
+    margin-top: 61px;
+    margin-bottom: 289px;
+  }
+}
+@media (max-width: 599.9px) {
+  .contacts__select {
+    margin-top: 80px;
+    margin-bottom: 132px;
+  }
+  .contacts__select.open, .contacts__select.selected {
+    margin-top: 42px;
+  }
 }
 
 .select {
+  position: relative;
+  z-index: 1;
   width: 450px;
   height: 50px;
-  overflow: hidden;
   transition: 0.3s;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-@media (max-width: 1023.9px) {
-  .select {
-    margin-top: 0;
-    margin-bottom: 249px;
-  }
 }
 @media (max-width: 599.9px) {
   .select {
     width: 300px;
     max-width: 100%;
-    margin-bottom: 132px;
   }
 }
 .select.open, .select.selected {
@@ -1257,6 +1270,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 
 .select__header {
   position: relative;
+  z-index: 1;
   padding: 0 35px;
   font-size: 20px;
   line-height: 50px;
@@ -1273,7 +1287,7 @@ a:hover, a:focus, a:focus-visible, a:active {
 }
 @media (max-width: 599.9px) {
   .select__header {
-    padding-right: 12px;
+    padding: 0 20px;
   }
 }
 .select__header:after {
@@ -1286,6 +1300,11 @@ a:hover, a:focus, a:focus-visible, a:active {
   border-radius: 50%;
   background: #aea1a1 url("../assets/svg/arrow.svg") no-repeat center;
   transition: 0.3s;
+}
+@media (max-width: 599.9px) {
+  .select__header:after {
+    right: 20px;
+  }
 }
 .select__header:hover, .select__header:focus, .select__header:focus-visible, .select__header:active {
   background: #c1e698;
@@ -1306,12 +1325,33 @@ a:hover, a:focus, a:focus-visible, a:active {
 }
 
 .select__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0 35px 30px;
+  background: #d6e7d2;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.select.open .select__body {
+  height: 282px;
+}
+@media (max-width: 599.9px) {
+  .select__body {
+    padding: 0 20px 30px;
+  }
+}
+
+.select__select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   display: block;
   width: 100%;
-  padding: 18px 35px 30px;
+  margin-top: 68px;
   border: none;
   outline: none;
   background: #d6e7d2;
@@ -1360,47 +1400,88 @@ a:hover, a:focus, a:focus-visible, a:active {
   border-color: #717171;
 }
 
-.contacts__right-column {
-  position: relative;
-}
-
 .contacts__card {
   position: absolute;
   top: 36px;
-  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
+}
+@media (max-width: 1023.9px) {
+  .contacts__card {
+    top: 61px;
+  }
+}
+@media (max-width: 599.9px) {
+  .contacts__card {
+    top: 42px;
+  }
 }
 .select.selected ~ .contacts__card {
   top: 133px;
   opacity: 1;
   pointer-events: all;
 }
+@media (max-width: 1023.9px) {
+  .select.selected ~ .contacts__card {
+    top: 170px;
+  }
+}
+@media (max-width: 599.9px) {
+  .select.selected ~ .contacts__card {
+    top: 140px;
+  }
+}
 
 .info-card {
-  width: 450px;
-  padding: 17px 33px 32px;
+  width: 448px;
+  padding: 27px 33px 31px;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 20px;
   font-weight: 400;
   color: #717171;
   letter-spacing: 0.05em;
+  background: #edf2ec;
   border: 1px solid #000000;
   border-radius: 20px;
 }
+@media (max-width: 599.9px) {
+  .info-card {
+    width: 282px;
+    max-width: 100%;
+    padding: 27px 35px 22px;
+  }
+}
+@media (max-width: 360px) {
+  .info-card {
+    padding: 20px;
+  }
+}
 
-.info-card__title {
-  display: inline-block;
-  width: 128px;
+.info-card__row {
+  display: flex;
+}
+.info-card__row > span:first-child {
+  flex: 0 0 133px;
   color: #000000;
+}
+@media (max-width: 599.9px) {
+  .info-card__row > span:first-child {
+    flex: 0 0 67px;
+  }
+}
+.info-card__row:not(:last-of-type) {
+  margin-bottom: 20px;
 }
 
 .info-card__button {
   display: block;
   width: 122px;
   height: 26px;
-  margin: 24px auto 0;
+  margin: 28px auto 0;
   font-family: "Inika", serif;
   font-size: 10px;
   line-height: 26px;
@@ -1409,6 +1490,15 @@ a:hover, a:focus, a:focus-visible, a:active {
   text-align: center;
   border: 1px solid #e06733;
   border-radius: 5px;
+}
+.info-card__button:hover, .info-card__button:focus, .info-card__button:focus-visible, .info-card__button:active {
+  color: #ffffff;
+  background: #e06733;
+}
+@media (max-width: 599.9px) {
+  .info-card__button {
+    margin-top: 17px;
+  }
 }
 
 .footer__wrapper {

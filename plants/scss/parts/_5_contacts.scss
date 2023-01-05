@@ -13,12 +13,8 @@
   text-align: center;
   font-weight: 700;
   @include media-t {
-    margin-bottom: 99px;
     font-size: 40px;
     line-height: 52px;
-  }
-  @include media-m {
-    margin-bottom: 81px;
   }
   @include media-s {
     font-size: 25px;
@@ -51,28 +47,47 @@
 
 // --------------------------
 
-.contacts__select {
+.contacts__right-column {
   position: relative;
-  z-index: 1;
+  @include media-t {
+    max-width: 100%;
+  }
+}
+
+.contacts__select {
   margin-top: 36px;
-  margin-bottom: 47px;
+
+  @include media-t {
+    margin-top: 100px;
+    margin-bottom: 250px;
+    &.open,
+    &.selected {
+      margin-top: 61px;
+      margin-bottom: 289px;
+    }
+  }
+
+  @include media-s {
+    margin-top: 80px;
+    margin-bottom: 132px;
+    &.open,
+    &.selected {
+      margin-top: 42px;
+    }
+  }
 }
 
 .select {
+  position: relative;
+  z-index: 1;
   width: 450px;
   height: 50px;
-  overflow: hidden;
   transition: 0.3s;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  @include media-t {
-    margin-top: 0;
-    margin-bottom: 249px;
-  }
   @include media-s {
     width: 300px;
     max-width: 100%;
-    margin-bottom: 132px;
   }
 
   &.open,
@@ -83,6 +98,7 @@
 
 .select__header {
   position: relative;
+  z-index: 1;
   padding: 0 35px;
   @include font(20px, 50px, $color-gray);
   letter-spacing: 0.05em;
@@ -92,7 +108,7 @@
   cursor: pointer;
 
   @include media-s {
-    padding-right: 12px;
+    padding: 0 20px;
   }
 
   &:after {
@@ -105,6 +121,9 @@
     border-radius: 50%;
     background: #aea1a1 url('../assets/svg/arrow.svg') no-repeat center;
     transition: 0.3s;
+    @include media-s {
+      right: 20px;
+    }
   }
 
   @include hov {
@@ -129,10 +148,31 @@
 }
 
 .select__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0 35px 30px;
+  background: $color-bg2;
+  transition: 0.3s;
+  overflow: hidden;
+
+  .select.open & {
+    height: 282px;
+  }
+
+  @include media-s {
+    padding: 0 20px 30px;
+  }
+}
+
+.select__select {
   appearance: none;
   display: block;
   width: 100%;
-  padding: 18px 35px 30px;
+  margin-top: 68px;
   border: none;
   outline: none;
   background: $color-bg2;
@@ -184,48 +224,87 @@
 
 // -----------------------------------------
 
-.contacts__right-column {
-  position: relative;
-}
-
 .contacts__card {
   position: absolute;
   top: 36px;
-  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
+  @include media-t {
+    top: 61px;
+  }
+  @include media-s {
+    top: 42px;
+  }
 
   .select.selected ~ & {
     top: 133px;
     opacity: 1;
     pointer-events: all;
+    @include media-t {
+      top: 170px;
+    }
+    @include media-s {
+      top: 140px;
+    }
   }
 }
 
 .info-card {
-  width: 450px;
-  padding: 17px 33px 32px;
-  @include font(16px, 40px, $color-gray);
+  width: 448px;
+  padding: 27px 33px 31px;
+  @include font(16px, 20px, $color-gray);
   letter-spacing: 0.05em;
+  background: $color-bg;
   border: 1px solid #000000;
   border-radius: 20px;
+
+  @include media-s {
+    width: 282px;
+    max-width: 100%;
+    padding: 27px 35px 22px;
+  }
+  @include media(360px) {
+    padding: 20px;
+  }
 }
 
-.info-card__title {
-  display: inline-block;
-  width: 128px;
-  color: $color-dark;
+.info-card__row {
+  display: flex;
+
+  > span:first-child {
+    flex: 0 0 133px;
+    color: $color-dark;
+    @include media-s {
+      flex: 0 0 67px;
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
 }
 
 .info-card__button {
   display: block;
   width: 122px;
   height: 26px;
-  margin: 24px auto 0;
+  margin: 28px auto 0;
   font-family: 'Inika', serif;
   @include font(10px, 26px, $color-gray, 700);
   text-align: center;
   border: 1px solid $color-accent;
   border-radius: 5px;
+
+  @include hov {
+    color: $color-light;
+    background: $color-accent;
+  }
+
+  @include media-s {
+    margin-top: 17px;
+  }
 }
