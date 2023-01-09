@@ -44,7 +44,7 @@ buttonsField.addEventListener('click', (e) => {
 const accordeon = document.querySelector('.prices__accordeon');
 
 accordeon.addEventListener('click', (e) => {
-  if (!e.target.classList.contains('dropdown')) return;
+  if (!e.target.closest('.price-item__header')) return;
   const curItem = e.target.closest('.price-item');
   const activeItem = accordeon.querySelector('.price-item.active');
 
@@ -54,10 +54,7 @@ accordeon.addEventListener('click', (e) => {
   }
 
   curItem.classList.toggle('active');
-
-  curItem.classList.contains('active')
-    ? (curItem.style.height = 50 + parseInt(getComputedStyle(curItem.lastElementChild).height) + 'px')
-    : (curItem.style.height = '');
+  curItem.classList.contains('active') ? (curItem.style.height = curItem.scrollHeight + 'px') : (curItem.style.height = '');
 });
 
 // ------------------------------------------------------------------------------

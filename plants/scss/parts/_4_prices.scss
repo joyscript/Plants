@@ -104,16 +104,24 @@
 .price-item {
   width: 250px;
   height: 50px;
-  padding-right: 30px;
-  padding-left: 40px;
   background: $color-bg;
   border-radius: 20px;
   transition: 0.3s;
   overflow: hidden;
 
+  &:not(:last-child) {
+    margin-bottom: 32px;
+    @include media-s {
+      margin-bottom: 14px;
+    }
+  }
+
   @include media-s {
     width: 180px;
-    padding-left: 30px;
+  }
+
+  @include hov {
+    background: $color-bg2;
   }
 
   &.active {
@@ -121,47 +129,74 @@
   }
 }
 
-.price-item:not(:last-child) {
-  margin-bottom: 32px;
-  @include media-s {
-    margin-bottom: 14px;
-  }
-}
-
 .price-item__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
   height: 50px;
-  margin-bottom: -7px;
-}
-
-.price-item__title {
+  padding: 0 40px;
+  line-height: 50px;
   color: $color-dark;
+  cursor: pointer;
+
   @include media-s {
+    padding: 0 30px;
     font-size: 15px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    transition: 0.3s;
+  }
+
+
+  &:before {
+    top: 44px;
+    left: 40px;
+    width: 164px;
+    height: 1px;
+    background: #aea1a1;
+    opacity: 0;
+    .price-item.active & {
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 17px;
+    right: 40px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: url('../assets/svg/arrows-sprite.svg#arrow-light') no-repeat center;
+    @include media-s {
+      right: 30px;
+    }
+    .price-item.active & {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include hov {
+    &:after {
+      background-image: url('../assets/svg/arrows-sprite.svg#arrow-dark');
+    }
   }
 }
 
 .price-item__content {
-  padding-bottom: 7px;
+  padding: 1px 40px 12px;
 }
 
 .price-item__desc {
-  max-width: 167px;
-  padding: 6px 0;
+  margin-bottom: 6px;
   @include font(10px, 10px, $color-gray, 300);
-  border-top: 0.5px solid #aea1a1;
-  opacity: 0;
-  transition: 0.3s;
-
-  .price-item.active & {
-    opacity: 1;
-  }
 }
 
 .price-item__price {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   @include font(12px, 20px, $color-dark, 400);
 }
 

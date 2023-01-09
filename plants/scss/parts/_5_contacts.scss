@@ -119,26 +119,24 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #aea1a1 url('../assets/svg/arrow.svg') no-repeat center;
+    background: url('../assets/svg/arrows-sprite.svg#arrow-dark') no-repeat center;
     transition: 0.3s;
     @include media-s {
       right: 20px;
+    }
+    .select.open &,
+    .select.selected & {
+      background-image: url('../assets/svg/arrows-sprite.svg#arrow-active');
+      transform: rotate(180deg);
     }
   }
 
   @include hov {
     background: $color-bg3;
-    &:after {
-      background-color: #8ba07e;
-    }
   }
 
   .select.open & {
     background: $color-bg3;
-    &:after {
-      background-color: #8ba07e;
-      transform: rotate(180deg);
-    }
   }
 
   .select.selected & {
