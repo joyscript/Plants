@@ -1072,6 +1072,12 @@ a:hover, a:focus, a:focus-visible, a:active {
   background: #aea1a1;
   opacity: 0;
 }
+@media (max-width: 599.9px) {
+  .price-item__header:before {
+    left: 30px;
+    width: 120px;
+  }
+}
 .price-item.active .price-item__header:before {
   opacity: 1;
 }
@@ -1099,6 +1105,12 @@ a:hover, a:focus, a:focus-visible, a:active {
 
 .price-item__content {
   padding: 1px 40px 12px;
+}
+@media (max-width: 599.9px) {
+  .price-item__content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .price-item__desc {
