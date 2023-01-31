@@ -1,0 +1,121 @@
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  font-family: 'Inika', serif;
+
+  @include media-t {
+    padding-top: 35px;
+    padding-bottom: 32px;
+  }
+  @include media-m {
+    padding-top: 34px;
+    padding-bottom: 36px;
+  }
+}
+
+.logo {
+  padding-right: 10px;
+  padding-left: 23px;
+  @include font(16px, 50px, $color-dark);
+  background: url('../assets/svg/logo.svg') no-repeat;
+  background-position-y: 9px;
+
+  @include media-m {
+    padding: 9px 10px 1px 21px;
+    line-height: 16px;
+    background-position-y: 2px;
+  }
+}
+
+.nav__list {
+  display: flex;
+  gap: 27px;
+  margin-right: -9px;
+
+  @include media-m {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -450px;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 300px;
+    margin: 0;
+    padding: 100px 30px 50px;
+    background: $color-light;
+    transition: right 0.3s;
+    overflow: auto;
+
+    .menu-open & {
+      right: 0;
+    }
+  }
+
+  @include media(350px) {
+    width: 100%;
+  }
+}
+
+.nav__link {
+  padding: 0 10px;
+  @include font(16px, 50px, $color-links);
+  @include media-m {
+    font-size: 26px;
+    color: $color-prim;
+  }
+}
+
+// -----------------------------------------
+
+.burger {
+  display: none;
+
+  @include media-m {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 26px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  span,
+  &::after,
+  &::before {
+    width: 100%;
+    height: 2px;
+    background: $color-gray;
+    transition: transform 0.3s;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    .menu-open & {
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    top: 16px;
+  }
+
+  .menu-open & {
+    span:first-child {
+      transform: rotate(45deg) translate(8px, 9px);
+    }
+    span:last-child {
+      transform: rotate(-45deg) translate(8px, -9px);
+    }
+  }
+}

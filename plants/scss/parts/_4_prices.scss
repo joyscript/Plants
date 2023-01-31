@@ -1,0 +1,236 @@
+.prices__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 108px;
+  @include media-t {
+    padding-bottom: 81px;
+  }
+  @include media-m {
+    flex-direction: column;
+    align-items: center;
+  }
+  @include media-s {
+    padding-top: 25px;
+    padding-bottom: 40px;
+    gap: 20px;
+  }
+}
+
+.prices__title {
+  margin-bottom: 60px;
+  font-family: Inter, sans-serif;
+  line-height: 49px;
+  color: $color-dark;
+  font-weight: 700;
+  @include media-t {
+    margin-bottom: 57px;
+    margin-left: 15px;
+    line-height: 42px;
+  }
+  @include media-m {
+    margin-left: 0;
+    text-align: center;
+  }
+  @include media-s {
+    margin-bottom: 37px;
+    line-height: 30px;
+  }
+}
+
+.prices__right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 460px;
+  @include media-t {
+    max-width: 296px;
+    padding-top: 99px;
+  }
+  @include media-m {
+    align-items: center;
+    padding-top: 0;
+  }
+  @include media-s {
+    max-width: 240px;
+  }
+}
+
+.prices__text {
+  margin-bottom: 41px;
+  text-align: right;
+  @include font(40px, 50px, $color-dark, 700);
+  @include media-t {
+    margin-bottom: 29px;
+    font-size: 25px;
+    line-height: 35px;
+  }
+  @include media-m {
+    text-align: center;
+  }
+  @include media-s {
+    margin-bottom: 19px;
+    font-size: 20px;
+  }
+}
+
+.prices__span {
+  color: $color-prim;
+}
+
+.prices__pic {
+  margin-top: 34px;
+  margin-right: -9px;
+  @include media-t {
+    margin-top: 29px;
+    margin-right: -10px;
+  }
+  @include media-s {
+    display: none;
+  }
+}
+
+// ------------------------------------
+
+.prices__accordeon {
+  padding: 33px 40px;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  -webkit-tap-highlight-color: transparent;
+  @include media-s {
+    padding: 28px 21px;
+  }
+  @media (min-width: 768px) {
+    position: absolute;
+  }
+}
+
+.price-item {
+  width: 250px;
+  height: 50px;
+  background: $color-bg;
+  border-radius: 20px;
+  transition: 0.3s;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+    @include media-s {
+      margin-bottom: 14px;
+    }
+  }
+
+  @include media-s {
+    width: 180px;
+  }
+
+  @include hov {
+    background: $color-bg2;
+  }
+
+  &.active {
+    background: $color-bg2;
+  }
+}
+
+.price-item__header {
+  position: relative;
+  height: 50px;
+  padding: 0 40px;
+  line-height: 50px;
+  color: $color-dark;
+  cursor: pointer;
+
+  @include media-s {
+    padding: 0 30px;
+    font-size: 15px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    transition: 0.3s;
+  }
+
+  &:before {
+    top: 44px;
+    left: 40px;
+    width: 164px;
+    height: 1px;
+    background: #aea1a1;
+    opacity: 0;
+    @include media-s {
+      left: 30px;
+      width: 120px;
+    }
+    .price-item.active & {
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 17px;
+    right: 40px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: url('../assets/svg/arrows-sprite.svg#arrow-light') no-repeat center;
+    @include media-s {
+      right: 30px;
+    }
+    .price-item.active & {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include hov {
+    &:after {
+      background-image: url('../assets/svg/arrows-sprite.svg#arrow-dark');
+    }
+  }
+}
+
+.price-item__content {
+  padding: 1px 40px 12px;
+  @include media-s {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.price-item__desc {
+  margin-bottom: 6px;
+  @include font(10px, 10px, $color-gray, 300);
+}
+
+.price-item__price {
+  margin-bottom: 8px;
+  @include font(12px, 20px, $color-dark, 400);
+}
+
+.price-item__currency {
+  @include font(12px, 20px, $color-accent, 700);
+}
+
+.price-item__amount {
+  @include font(16px, 20px, $color-accent, 700);
+}
+
+.price-item__button {
+  display: block;
+  width: 86px;
+  height: 25px;
+  font-family: Inter, sans-serif;
+  @include font(14px, 25px, $color-gray, 700);
+  text-align: center;
+  background: $color-light;
+  border-radius: 10px;
+
+  @include hov {
+    color: $color-light;
+    background: $color-accent;
+  }
+}

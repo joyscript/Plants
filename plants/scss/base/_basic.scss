@@ -12,8 +12,28 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 300px;
   background: $color-light;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    background: transparent;
+    transition: background 0.3s;
+  }
+
+  &.menu-open {
+    overflow: hidden;
+
+    &::after {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 main,
@@ -66,4 +86,27 @@ a {
 [class*='__wrapper'] {
   max-width: $wrapper-width;
   margin: 0 auto;
+  padding: 40px 109px;
+
+  @include media-l {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include media-m {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include media-s {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.header,
+.welcome,
+.service,
+.contacts {
+  background: $color-bg;
 }

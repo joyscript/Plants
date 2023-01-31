@@ -1,0 +1,308 @@
+.contacts__wrapper {
+  padding-top: 60px;
+  padding-bottom: 0;
+  @include media-t {
+    padding-top: 40px;
+  }
+  @include media-s {
+    padding-top: 25px;
+  }
+}
+
+.contacts__title {
+  text-align: center;
+  font-weight: 700;
+  @include media-t {
+    font-size: 40px;
+    line-height: 52px;
+  }
+  @include media-s {
+    font-size: 25px;
+    line-height: 33px;
+  }
+}
+
+.contacts__content {
+  display: flex;
+  justify-content: space-between;
+  @include media-t {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contacts__pic {
+  margin-top: -59px;
+  @include media-t {
+    order: 1;
+    width: 200px;
+    margin-top: 0;
+    margin-left: 20px;
+  }
+  @include media-s {
+    width: 100px;
+    margin-left: -5px;
+  }
+}
+
+// --------------------------
+
+.contacts__right-column {
+  position: relative;
+  @include media-t {
+    max-width: 100%;
+  }
+}
+
+.contacts__select {
+  margin-top: 36px;
+
+  @include media-t {
+    margin-top: 100px;
+    margin-bottom: 250px;
+    &.open,
+    &.selected {
+      margin-top: 61px;
+      margin-bottom: 289px;
+    }
+  }
+
+  @include media-s {
+    margin-top: 80px;
+    margin-bottom: 132px;
+    &.open,
+    &.selected {
+      margin-top: 42px;
+    }
+  }
+}
+
+.select {
+  position: relative;
+  z-index: 1;
+  width: 450px;
+  height: 50px;
+  transition: 0.3s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-tap-highlight-color: transparent;
+
+  @include media-s {
+    width: 300px;
+    max-width: 100%;
+  }
+
+  &.open,
+  &.selected {
+    box-shadow: none;
+  }
+}
+
+.select__header {
+  position: relative;
+  z-index: 1;
+  padding: 0 35px;
+  @include font(20px, 50px, $color-gray);
+  letter-spacing: 0.05em;
+  background: $color-bg2;
+  transition: background 0.3s;
+  user-select: none;
+  cursor: pointer;
+
+  @include media-s {
+    padding: 0 20px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 17px;
+    right: 35px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: url('../assets/svg/arrows-sprite.svg#arrow-dark') no-repeat center;
+    transition: 0.3s;
+    @include media-s {
+      right: 20px;
+    }
+    .select.open & {
+      background-image: url('../assets/svg/arrows-sprite.svg#arrow-active');
+      transform: rotate(180deg);
+    }
+  }
+
+  @include hov {
+    background: $color-bg3;
+  }
+
+  .select.open & {
+    background: $color-bg3;
+  }
+
+  .select.selected & {
+    background: $color-bg3;
+    font-size: 16px;
+  }
+}
+
+.select__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0 35px 30px;
+  background: $color-bg2;
+  transition: 0.3s;
+  overflow: hidden;
+
+  .select.open & {
+    height: 282px;
+  }
+
+  @include media-s {
+    padding: 0 20px 30px;
+  }
+}
+
+.select__select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin-top: 68px;
+  border: none;
+  outline: none;
+  background: $color-bg2;
+  overflow: visible; //for webkit
+  scrollbar-width: none; //for mozilla
+  cursor: pointer;
+}
+
+.select__option {
+  appearance: none;
+  width: 100%;
+  padding: 20px 5px 5px;
+  @include font(16px, 50px, $color-prim);
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #d9d9d9;
+  background: $color-bg2;
+  transition: 0.4s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-gray;
+    border-color: $color-gray;
+  }
+}
+
+//This is nececcary to get rid of blue background and white color
+.select__option:checked {
+  position: relative;
+
+  &:after {
+    content: attr(value);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5px 5px;
+    color: $color-gray;
+    background: linear-gradient($color-bg2, $color-bg2);
+    background-color: $color-bg2 !important;
+    border-bottom: 1px solid #d9d9d9;
+    transition: 0.3s;
+  }
+
+  &:hover:after {
+    border-color: $color-gray;
+  }
+}
+
+// -----------------------------------------
+
+.contacts__card {
+  position: absolute;
+  top: 36px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+  @include media-t {
+    top: 61px;
+  }
+  @include media-s {
+    top: 42px;
+  }
+
+  .select.selected ~ & {
+    top: 133px;
+    opacity: 1;
+    pointer-events: all;
+    @include media-t {
+      top: 170px;
+    }
+    @include media-s {
+      top: 140px;
+    }
+  }
+}
+
+.info-card {
+  width: 448px;
+  padding: 27px 33px 31px;
+  @include font(16px, 20px, $color-gray);
+  letter-spacing: 0.05em;
+  background: $color-bg;
+  border: 1px solid #000000;
+  border-radius: 20px;
+
+  @include media-s {
+    width: 282px;
+    max-width: 100%;
+    padding: 27px 35px 22px;
+  }
+  @include media(360px) {
+    padding: 20px;
+  }
+}
+
+.info-card__row {
+  display: flex;
+
+  > span:first-child {
+    flex: 0 0 133px;
+    color: $color-dark;
+    @include media-s {
+      flex: 0 0 67px;
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
+
+.info-card__button {
+  display: block;
+  width: 122px;
+  height: 26px;
+  margin: 28px auto 0;
+  font-family: 'Inika', serif;
+  @include font(10px, 26px, $color-gray, 700);
+  text-align: center;
+  border: 1px solid $color-accent;
+  border-radius: 5px;
+
+  @include hov {
+    color: $color-light;
+    background: $color-accent;
+  }
+
+  @include media-s {
+    margin-top: 17px;
+  }
+}

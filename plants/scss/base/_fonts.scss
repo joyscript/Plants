@@ -6,15 +6,37 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include media-s {
+    font-size: 16px;
+    line-height: 25px;
+  }
 }
 
 h1 {
   @include font(45px, 50px, $color-gray, 700);
+
+  @include media-t {
+    font-size: 35px;
+  }
+  @include media-s {
+    font-size: 25px;
+    line-height: 35px;
+  }
 }
 
 h2 {
   font-family: Inika, serif;
   @include font(40px, 52px, $color-prim);
+
+  @include media-t {
+    font-size: 35px;
+    line-height: 46px;
+  }
+  @include media-s {
+    font-size: 25px;
+    line-height: 33px;
+  }
 }
 
 h3 {

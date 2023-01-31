@@ -6,6 +6,10 @@
 @import 'base/common';
 
 // Parts
-@import 'parts/header';
-@import 'parts/main';
-@import 'parts/footer';
+@import 'parts/0_header';
+@import 'parts/1_welcome';
+@import 'parts/2_about';
+@import 'parts/3_service';
+@import 'parts/4_prices';
+@import 'parts/5_contacts';
+@import 'parts/6_footer';

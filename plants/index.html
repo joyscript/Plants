@@ -39,6 +39,7 @@
             <li><a href="#prices" class="nav__link">Price</a></li>
             <li><a href="#contacts" class="nav__link">Contacts</a></li>
           </ul>
+          <button class="burger"><span></span><span></span></button>
         </nav>
       </div>
     </header>
@@ -46,7 +47,9 @@
     <main>
       <section class="welcome">
         <div class="welcome__wrapper">
-          <img class="welcome__pic" src="assets/images/leaves.png" alt="Leaves">
+          <div class="welcome__pic">
+            <img src="assets/images/leaves.png" alt="Leaves">
+          </div>
           <div class="welcome__content">
             <h1 class="welcome__title">We grow <span class="welcome__span">plants</span> and give you oxygen</h1>
             <p class="welcome__text">
@@ -69,7 +72,9 @@
               remaining essentially unchanged.
             </p>
           </div>
-          <img class="about__pic" src="assets/images/houseplant.png" alt="Houseplant">
+          <div class="about__pic">
+            <img src="assets/images/houseplant.png" alt="Houseplant">
+          </div>
         </div>
       </section>
 
@@ -78,61 +83,61 @@
           <div class="service__content">
             <h2 class="service__title">Service and our projects</h2>
             <div class="service__buttons">
-              <button class="button">Gardens</button>
-              <button class="button">Lawn</button>
-              <button class="button">Planting</button>
+              <button class="button button_service">Gardens</button>
+              <button class="button button_service">Lawn</button>
+              <button class="button button_service">Planting</button>
             </div>
           </div>
 
           <div class="services">
-            <div class="service-item">
+            <div class="service-item" data-service="Gardens">
               <div class="service-item__pic">
-                <img src="assets/images/services/1.jpg" alt="Service">
+                <img src="assets/images/services/1.jpg" alt="Garden care">
               </div>
               <div class="service-item__content">
                 <h3 class="service-item__title">Garden care</h3>
                 <p class="service-item__desc">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" data-service="Planting">
               <div class="service-item__pic">
-                <img src="assets/images/services/2.jpg" alt="Service">
+                <img src="assets/images/services/2.jpg" alt="Planting">
               </div>
               <div class="service-item__content">
                 <h3 class="service-item__title">Planting</h3>
                 <p class="service-item__desc">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" data-service="Lawn">
               <div class="service-item__pic">
-                <img src="assets/images/services/3.jpg" alt="Service">
+                <img src="assets/images/services/3.jpg" alt="Lawn care">
               </div>
               <div class="service-item__content">
                 <h3 class="service-item__title">Lawn care</h3>
                 <p class="service-item__desc">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" data-service="Planting">
               <div class="service-item__pic">
-                <img src="assets/images/services/4.jpg" alt="Service">
+                <img src="assets/images/services/4.jpg" alt="Planting">
               </div>
               <div class="service-item__content">
                 <h3 class="service-item__title">Planting</h3>
                 <p class="service-item__desc">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" data-service="Gardens">
               <div class="service-item__pic">
-                <img src="assets/images/services/5.jpg" alt="Service">
+                <img src="assets/images/services/5.jpg" alt="Garden care">
               </div>
               <div class="service-item__content">
                 <h3 class="service-item__title">Garden care</h3>
                 <p class="service-item__desc">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" data-service="Planting">
               <div class="service-item__pic">
-                <img src="assets/images/services/6.jpg" alt="Service">
+                <img src="assets/images/services/6.jpg" alt="Planting">
               </div>
               <div class="service-item__content">
                 <h3 class="service-item__title">Planting</h3>
@@ -149,34 +154,76 @@
             <h2 class="prices__title">Prices</h2>
             <div class="prices__accordeon">
               <div class="price-item">
-                <h3 class="price-item__title">Basics</h3>
-                <span class="dropdown"></span>
+                <h3 class="price-item__header">Basics</h3>
+                <div class="price-item__content">
+                  <p class="price-item__desc">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="price-item__price">
+                    <span class="price-item__currency">$</span><span class="price-item__amount">15</span> / per hour
+                  </p>
+                  <a class="price-item__button" href="#contacts">Order</a>
+                </div>
               </div>
               <div class="price-item">
-                <h3 class="price-item__title">Standard</h3>
-                <span class="dropdown"></span>
+                <h3 class="price-item__header">Standard</h3>
+                <div class="price-item__content">
+                  <p class="price-item__desc">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="price-item__price">
+                    <span class="price-item__currency">$</span><span class="price-item__amount">25</span> / per hour
+                  </p>
+                  <a class="price-item__button" href="#contacts">Order</a>
+                </div>
               </div>
               <div class="price-item">
-                <h3 class="price-item__title">Pro care</h3>
-                <span class="dropdown"></span>
+                <h3 class="price-item__header">Pro care</h3>
+                <div class="price-item__content">
+                  <p class="price-item__desc">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="price-item__price">
+                    <span class="price-item__currency">$</span><span class="price-item__amount">35</span> / per hour
+                  </p>
+                  <a class="price-item__button" href="#contacts">Order</a>
+                </div>
               </div>
             </div>
           </div>
           <div class="prices__right-column">
-            <p class="prices__text">Our best <span class="prices__span">gardeners</span> are ready to help you</p>
+            <p class="prices__text">Our best <span class="prices__span">gardeners</span>&nbsp;are ready&nbsp;to help you</p>
             <button class="button button_prices">Contact us</button>
-            <img class="prices__pic" src="assets/images/leaves2.png" alt="Leaves">
+            <div class="prices__pic">
+              <img src="assets/images/leaves2.png" alt="Leaves">
+            </div>
           </div>
         </div>
       </section>
 
       <section class="contacts" id="contacts">
         <div class="contacts__wrapper">
-          <img class="contacts__pic" src="assets/images/woman.png" alt="Woman">
           <h2 class="contacts__title">Contact us</h2>
-          <div class="contacts__select">
-            <span class="contacts__span">City</span>
-            <span class="dropdown dropdown_contacts"></span>
+          <div class="contacts__content">
+            <div class="contacts__pic">
+              <img src="assets/images/woman.png" alt="Woman">
+            </div>
+
+            <div class="contacts__right-column">
+              <div class="select contacts__select">
+                <div class="select__header">City</div>
+                <div class="select__body">
+                  <select class="select__select" name="city" size="4">
+                    <option class="select__option" value="Canandaigua, NY">Canandaigua, NY</option>
+                    <option class="select__option" value="New York City">New York City</option>
+                    <option class="select__option" value="Yonkers, NY">Yonkers, NY</option>
+                    <option class="select__option" value="Sherrill, NY">Sherrill, NY</option>
+                  </select>
+                </div>
+              </div>
+              <div class="contacts__card">
+                <div class="info-card">
+                  <div class="info-card__row"><span>City:</span><span data-info></span></div>
+                  <div class="info-card__row"><span>Phone:</span><span data-info></span></div>
+                  <div class="info-card__row"><span>Office adress:</span><span data-info></span></div>
+                  <a class="info-card__button" href="">Call us</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -192,22 +239,22 @@
         <ul class="soclist">
           <li>
             <a class="soclist__link" href="#!" title="Instagram">
-              <img src="assets/svg/soc-sprite.svg#inst" alt="Instagram">
+              <img src="assets/svg/soc-sprite.svg#inst" alt="Instagram" aria-hidden="true">
             </a>
           </li>
           <li>
             <a class="soclist__link" href="#!" title="Facebook">
-              <img src="assets/svg/soc-sprite.svg#fb" alt="Facebook">
+              <img src="assets/svg/soc-sprite.svg#fb" alt="Facebook" aria-hidden="true">
             </a>
           </li>
           <li>
             <a class="soclist__link" href="#!" title="Twitter">
-              <img src="assets/svg/soc-sprite.svg#tw" alt="Twitter">
+              <img src="assets/svg/soc-sprite.svg#tw" alt="Twitter" aria-hidden="true">
             </a>
           </li>
           <li>
             <a class="soclist__link" href="#!" title="Pinterest">
-              <img src="assets/svg/soc-sprite.svg#pint" alt="Pinterest">
+              <img src="assets/svg/soc-sprite.svg#pint" alt="Pinterest" aria-hidden="true">
             </a>
           </li>
         </ul>

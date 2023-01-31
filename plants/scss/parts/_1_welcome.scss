@@ -1,0 +1,84 @@
+.welcome__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: 62px;
+  padding-bottom: 55px;
+
+  @include media-t {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  @include media-m {
+    gap: 15px;
+  }
+  @include media-s {
+    padding-top: 26px;
+    padding-bottom: 24px;
+  }
+}
+
+.welcome__pic {
+  margin-top: -9px; //PP
+  margin-left: -9px; //PP
+  @include media-t {
+    width: 290px;
+    margin-top: -6px; //PP
+    margin-right: -3px; //PP
+  }
+  @include media-s {
+    display: none;
+  }
+}
+
+.welcome__content {
+  max-width: 549px;
+  padding-top: 36px;
+
+  @include media-l {
+    padding-top: 0;
+  }
+  @include media-t {
+    order: -1;
+    flex-shrink: 0;
+    width: 340px;
+  }
+  @include media-s {
+    width: 100%;
+  }
+}
+
+.welcome__title {
+  margin-bottom: 44px;
+
+  @include media-t {
+    margin-bottom: 30px;
+  }
+  @include media-s {
+    max-width: 330px;
+    margin-bottom: 20px;
+  }
+}
+
+.welcome__span {
+  color: $color-prim;
+}
+
+.welcome__text {
+  max-width: 525px;
+  margin-bottom: 47px;
+  line-height: 35px;
+
+  @include media-t {
+    max-width: 330px;
+    margin-bottom: 36px;
+    margin-left: 5px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  @include media-s {
+    max-width: 400px;
+    margin-bottom: 26px;
+    margin-left: 0;
+  }
+}

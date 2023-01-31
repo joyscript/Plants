@@ -1,70 +1,62 @@
 .button {
   width: 161px;
-  min-height: 50px;
-  padding: 10px;
+  height: 50px;
+  padding: 5px 10px;
   font-family: Inika, serif;
   @include font(20px, 26px, $color-accent);
   border: 1px solid $color-accent;
   border-radius: 5px;
-
-  &_welcome {
-    width: 158px;
-    min-height: 44px;
-    font-family: Inter, sans-serif;
-    @include font(16px, 20px, $color-dark);
-    text-transform: uppercase;
-    border-width: 2px;
-    border-radius: 10px;
-  }
 
   &_prices {
     width: 162px;
     font-weight: 700;
   }
 
-  @include hov {
-    color: $color-light;
-    background: $color-accent;
-  }
-}
-
-//------------------------------
-
-.dropdown {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  background: #d9d9d9;
-  border: 10px solid $color-bg;
-  border-radius: 50%;
-  transition: 0.3s;
-  cursor: pointer;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    background: url('../assets/svg/arrow.svg') no-repeat center;
-    filter: invert(53%) sepia(0%) saturate(0%) hue-rotate(299deg) brightness(94%) contrast(92%);
+  @include media-s {
+    width: 121px;
+    height: 35px;
+    font-size: 15px;
+    line-height: 20px;
   }
 
-  @include hov {
-    background: #aea1a1;
-    transform: rotate(180deg);
+  &_welcome {
+    width: 158px;
+    height: 44px;
+    font-family: Inter, sans-serif;
+    @include font(16px, 20px, $color-dark);
+    text-transform: uppercase;
+    border-width: 2px;
+    border-radius: 10px;
 
-    &::after {
-      filter: invert(100%);
+    @include media-s {
+      width: 100px;
+      height: 34px;
+      font-size: 10px;
     }
   }
 
-  &_contacts {
-    background: #aea1a1;
-    border-color: #d6e7d2;
-    &::after {
-      filter: invert(100%);
+  &:not(.button_service):hover {
+    color: $color-light;
+    background: $color-accent;
+  }
+
+  &_service {
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 10px -8px lighten($color-accent, 15%);
+      }
+    }
+
+    &.active {
+      color: $color-light;
+      background: $color-accent;
+    }
+
+    &:disabled {
+      cursor: auto;
+      pointer-events: none;
+      opacity: 0.5;
     }
   }
 }

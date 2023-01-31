@@ -1,6 +1,8 @@
 $color-prim: #499a18;
 $color-accent: #e06733;
 $color-bg: #edf2ec;
+$color-bg2: #d6e7d2;
+$color-bg3: #c1e698;
 $color-light: #ffffff;
 $color-border: #e3e1d5;
 $color-gray: #717171;
@@ -45,4 +47,42 @@ $content-width: 1222px;
 @function perc($width, $container-width: $content-width) {
   $result: calc($width / $container-width * 100%);
   @return $result;
+}
+
+// -----------------------------------------------------
+
+@mixin media-d {
+  @media (max-width: ($wrapper-width - 0.1px)) {
+    @content;
+  }
+}
+
+@mixin media-l {
+  @media (max-width: 1319.9px) {
+    @content;
+  }
+}
+
+@mixin media-t {
+  @media (max-width: 1023.9px) {
+    @content;
+  }
+}
+
+@mixin media-m {
+  @media (max-width: 767.9px) {
+    @content;
+  }
+}
+
+@mixin media-s {
+  @media (max-width: 599.9px) {
+    @content;
+  }
+}
+
+@mixin media($width) {
+  @media (max-width: $width) {
+    @content;
+  }
 }
