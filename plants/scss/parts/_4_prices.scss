@@ -96,8 +96,12 @@
   padding: 33px 40px;
   border: 1px solid $color-border;
   border-radius: 20px;
+  -webkit-tap-highlight-color: transparent;
   @include media-s {
     padding: 28px 21px;
+  }
+  @media (min-width: 768px) {
+    position: absolute;
   }
 }
 
@@ -148,7 +152,6 @@
     position: absolute;
     transition: 0.3s;
   }
-
 
   &:before {
     top: 44px;

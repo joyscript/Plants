@@ -43,8 +43,8 @@
   &_service {
     @media (any-hover: hover) {
       &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 10px -8px lighten($color-accent, 10%);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 10px -8px lighten($color-accent, 15%);
       }
     }
 

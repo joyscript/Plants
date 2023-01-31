@@ -75,7 +75,7 @@ const contactsInfo = [
 
 const openSelect = () => {
   select.classList.remove('selected');
-  if (selectHeader.innerText != 'City') selectHeader.innerText = 'City';
+  if (selectHeader.textContent != 'City') selectHeader.textContent = 'City';
   document.body.addEventListener('click', closeSelect);
 };
 
@@ -86,9 +86,9 @@ const closeSelect = (e) => {
   }
 };
 
-const getInfoCard = (city) => {
+const fillInfoCard = (city) => {
   const curCity = contactsInfo.find((item) => item[0] == city);
-  infoFields.forEach((field, i) => (field.innerText = curCity[i]));
+  infoFields.forEach((field, i) => (field.textContent = curCity[i]));
   infoButton.href = `tel:${curCity[1].replace(/ /g, '')}`;
 };
 
@@ -98,8 +98,16 @@ selectHeader.addEventListener('click', (e) => {
 });
 
 selectSelect.addEventListener('change', (e) => {
-  selectHeader.innerText = e.target.value;
+  selectHeader.textContent = e.target.value;
   select.classList.add('selected');
-  getInfoCard(e.target.value);
+  fillInfoCard(e.target.value);
   closeSelect(e);
 });
+
+// ------------------------------------------------------------------------------
+
+console.log(`Самооценка: 125 баллов.
+1. При нажатии на кнопки: Gardens,Lawn,Planting - происходит смена фокуса на услугах в разделе service +50
+2. Accordion в секции prices реализация 3-х выпадающих списков об услугах и ценах + 50
+3. В разделе contacts реализован select с выбором городов +25
+`);
