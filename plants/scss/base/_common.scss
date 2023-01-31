@@ -35,26 +35,28 @@
     }
   }
 
-  @include hov {
+  &:not(.button_service):hover {
     color: $color-light;
     background: $color-accent;
   }
 
-  &.active {
-    color: $color-light;
-    background: $color-accent;
-    animation: anim 0.4s ease;
-  }
-}
+  &_service {
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 10px -8px lighten($color-accent, 10%);
+      }
+    }
 
-@keyframes anim {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
+    &.active {
+      color: $color-light;
+      background: $color-accent;
+    }
+
+    &:disabled {
+      cursor: auto;
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 }

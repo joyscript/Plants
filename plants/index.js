@@ -1,42 +1,43 @@
 const burger = document.querySelector('.burger');
 
 const closeMenu = (e) => {
+  if (e.target.classList.contains('nav__link')) {
+    e.preventDefault();
+    const id = e.target.getAttribute('href').slice(1);
+    document.getElementById(id).scrollIntoView();
+  }
   if (e.target.classList.contains('nav__link') || !e.target.closest('.nav')) {
     document.body.classList.remove('menu-open');
+    document.body.removeEventListener('click', closeMenu);
   }
 };
 
 burger.addEventListener('click', () => {
   document.body.classList.toggle('menu-open');
-
-  document.body.classList.contains('menu-open')
-    ? document.body.addEventListener('click', closeMenu)
-    : document.body.removeEventListener('click', closeMenu);
+  document.body.classList.contains('menu-open') && document.body.addEventListener('click', closeMenu);
 });
 
 // ------------------------------------------------------------------------------
 
-const buttonsField = document.querySelector('.service__buttons');
 const serviceItems = document.querySelectorAll('.service-item');
-let activeBtns = [];
+const buttonsField = document.querySelector('.service__buttons');
+const buttons = buttonsField.querySelectorAll('.button');
 
 buttonsField.addEventListener('click', (e) => {
-  if (!e.target.classList.contains('button') || activeBtns.includes(e.target)) return;
+  if (!e.target.classList.contains('button')) return;
   const button = e.target;
+  button.classList.toggle('active');
 
-  if (activeBtns.length == 2) {
-    activeBtns.forEach((btn) => btn.classList.remove('active'));
-    activeBtns = [];
+  const activeBtns = Array.from(buttonsField.querySelectorAll('.active'));
+  buttons.forEach((btn) => (btn.disabled = !btn.classList.contains('active') && activeBtns.length > 1));
+
+  if (activeBtns.length === 0) {
+    serviceItems.forEach((item) => item.classList.remove('blurred'));
+  } else {
+    serviceItems.forEach((item) => {
+      activeBtns.find((btn) => btn.textContent === item.dataset.service) ? item.classList.remove('blurred') : item.classList.add('blurred');
+    });
   }
-
-  button.classList.add('active');
-  activeBtns.push(button);
-
-  serviceItems.forEach((item) => {
-    activeBtns.find((button) => button.innerText == item.dataset.service)
-      ? item.classList.remove('blurred')
-      : item.classList.add('blurred');
-  });
 });
 
 // ------------------------------------------------------------------------------
