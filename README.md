@@ -1,11 +1,12 @@
 # Plants
 
-https://joyscript.github.io/Plants/
-
 **Учебный проект по фронтенд-разработке**
 
 Выполнен по заданию [**Rolling Scopes School**](https://rs.school/)
-https://github.com/rolling-scopes-school/tasks/blob/master/tasks/plants/plants.md
+
+**Deploy:** https://joyscript.github.io/Plants/
+
+**Task**: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/plants/plants.md
 
 ### Использованы технологии:
 
