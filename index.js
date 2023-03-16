@@ -103,11 +103,3 @@ selectSelect.addEventListener('change', (e) => {
   fillInfoCard(e.target.value);
   closeSelect(e);
 });
-
-// ------------------------------------------------------------------------------
-
-console.log(`Самооценка: 125 баллов.
-1. При нажатии на кнопки: Gardens,Lawn,Planting - происходит смена фокуса на услугах в разделе service +50
-2. Accordion в секции prices реализация 3-х выпадающих списков об услугах и ценах + 50
-3. В разделе contacts реализован select с выбором городов +25
-`);
